@@ -1,16 +1,15 @@
-@Grab(group='io.github.egonw.bacting', module='managers-cdk', version='0.0.9')
-import net.bioclipse.managers.CDKManager
+#!/usr/bin/env nextflow
 
-filename = "./short.tsv"
+Channel
+    .fromPath("./short.tsv")
+    .splitCsv(header: ['wikidata', 'smiles'], sep:'\t')
+    .map{ row -> tuple(row.wikidata, row.smiles) }
+    .set { molecules_ch }
 
-def cdk = new CDKManager(".");
+process printSMILES {
+    input:
+    set wikidata, smiles from molecules_ch
 
-println "file: " + filename
-new File(filename).eachLine() { line ->
-  fields = line.split("\t")
-  try {
-    mol = cdk.fromSMILES(fields[1])
-  } catch (Exception exc) {
-    println "Error in " + fields[0] + ": " + exc.message
-  }
+    exec:
+      println "${wikidata} has SMILES: ${smiles}"
 }
