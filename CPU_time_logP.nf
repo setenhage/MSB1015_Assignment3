@@ -7,15 +7,18 @@ import net.bioclipse.managers.CDKManager
 import org.openscience.cdk.interfaces.IAtomContainer
 import org.openscience.cdk.qsar.descriptors.molecular.*
 import groovy.time.*
+import java.io.File
 
-for (i in 8){
+def CPUduration = new File ("./CPU_duration.tsv")
+
+1.upto(8) {
    //Store the starting time 
    def timeStart = new Date()
   
    //The buffer splits the data into segments, which will be processed in parallel.
    //The data should be split into one segment per CPU that we want to use.
    //Therefore the buffer size is defined as number of SMILES/number of CPUs. 
-   int bufferSize = (int) Math.ceil(5/i) 
+   int bufferSize = (int) Math.ceil(5/it) 
   
    Channel
        .fromPath("./short.tsv")
@@ -56,7 +59,7 @@ for (i in 8){
 	         println "Error in calculating logP for this SMILE:" + smiles
 	       }
         }
-
+   } 
    //Record end time (when process is finished calculating LogP values).
    def timeStop = new Date()
    
@@ -65,5 +68,7 @@ for (i in 8){
    
    // Print time duration. 
    println "duration: " + duration
-   }
+
+   //
+   CPUduration.append(" ${it} \t ${duration} \n")  
 }
