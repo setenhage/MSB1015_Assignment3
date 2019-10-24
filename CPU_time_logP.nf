@@ -1,8 +1,12 @@
 #!/usr/bin/env nextflow
 
-//Grab and import the CDKManager module, so it can be used to parse the smiles into a CDK molecule object.  
+ 
 @Grab(group='io.github.egonw.bacting', module='managers-cdk', version='0.0.9')
+@Grab(group='org.openscience.cdk', module='cdk-qsarmolecular', version='2.3')
+
 import net.bioclipse.managers.CDKManager
+import org.openscience.cdk.interfaces.IAtomContainer
+import org.openscience.cdk.qsar.descriptors.molecular.*
 
 Channel
     .fromPath("./short.tsv")
@@ -19,21 +23,20 @@ process calculateLogP {
 	for (entry in set) {
 	    wikidata = entry[0] 
             smiles = entry[1]
-            println "${wikidata} has SMILES: ${smiles}"
 	    
-	    // Use CDKManager to parse SMILES and crate a CDK molecule object (mol).
-	    // This will return a CDK moleculair container  
+	    // Use CDKManager to parse SMILES. This will return a CDK molecule object  
             cdk = new CDKManager(".")
 	    mol = cdk.fromSMILES(smiles)
 	    
-	    // Convert the CDK moleculair container to IAtom container.
-	    IAtom = mol.getAtomContainer()
+	    // Convert the CDK molecule object to IAtom container.
+	    IAtom = mol.getAtomContainer()  
 
-            // create new JPLogDescriptor
-	    
+            // Calculate logP value 
+	    JPlogPDescr = new JPlogPDescriptor()
+	    LogPValue = JPlogPDescr.calculate(IAtom).value.doubleValue()
 
-            // calculate PLog value 
-	    
+	    // Print logP value. 
+	    println "logP value:"  + LogPValue
 	}
 
 }
