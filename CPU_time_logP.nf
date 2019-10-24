@@ -1,5 +1,6 @@
 #!/usr/bin/env nextflow
 
+//Grab and import the CDKManager module, so it can be used to parse the smiles into a CDK molecule object.  
 @Grab(group='io.github.egonw.bacting', module='managers-cdk', version='0.0.9')
 import net.bioclipse.managers.CDKManager
 
@@ -19,11 +20,18 @@ process calculateLogP {
 	    wikidata = entry[0] 
             smiles = entry[1]
             println "${wikidata} has SMILES: ${smiles}"
-	    // copy Groovy code to parse SMILES (CDKManager)
+	    
+	    // Use CDKManager to parse SMILES and crate a CDK molecule object (mol).
+	    // This will return a CDK moleculair container  
             cdk = new CDKManager(".")
 	    mol = cdk.fromSMILES(smiles)
-	    // convert mol to atom container
+	    
+	    // Convert the CDK moleculair container to IAtom container.
+	    IAtom = mol.getAtomContainer()
+
             // create new JPLogDescriptor
+	    
+
             // calculate PLog value 
 	    
 	}
