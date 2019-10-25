@@ -41,3 +41,6 @@ Egon Willighagen (getSMILES.rq)
 ## References:
 •	[Chemistry Development Kit](https://cdk.github.io//) </br>
 •	[Wikidata](https://query.wikidata.org) 
+
+## Licenses 
+Software created by others is used in this repository. Please respect the licenses of these other creators. Information on the licenses of these external resources can be found [here](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html).
