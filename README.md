@@ -27,9 +27,9 @@ Following software was used with the virual Linux environment [Debian](https://w
 •	[Java](https://java.com/nl/download/)
 
 ## Authors
-Suzanne ten Hage
+Suzanne ten Hage </br>
 Egon Willighagen (getSMILES.rq)
 
 ## References:
-•	[Chemistry Development Kit](https://cdk.github.io//) 
+•	[Chemistry Development Kit](https://cdk.github.io//) </br>
 •	[Wikidata](https://query.wikidata.org) 
