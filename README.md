@@ -2,7 +2,7 @@
 Welcome to the repository of MSB1015 Assignment 3! Here I keep track of my progress of MSB1015 2019 Assignment 3 at Maastricht University.
 
 ## Project description 
-The aim of this project is to show that parallel computing improves the calculation time of logP values compared to sequential computing. Here, we use nextflow to control the number of central processing units (CPUs) used during the calculation. 
+The aim of this project is to show that parallel computing improves the calculation time of logP values compared to sequential computing. Here, we use nextflow to control the number of central processing units (CPUs) used during the calculation. A more elaborate description of this project and the results can be found [here](https://setenhage.github.io/MSB1015_Assignment3/). 
 
 ## Pseudocode 
 1. Use getSMILES file provided by Egon Willighagen to obtain all compounds and their corresponding canonical and isomeric SMILES. <br/> 
