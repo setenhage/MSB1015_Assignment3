@@ -17,6 +17,7 @@ The aim of this project is to show that parallel computing improves the calculat
 `all_canonical_isomeric_smiles.tsv` <- Results from query (downloaded from query.wikiddata.org, using getSMILES) </br>
 `short.tsv` <- file with only 5 smiles to test code before running it on 158800 smiles.
 `Example_files` <- folder with example files provided by Egon Willighagen. </br>
+`Index.rmd` <- Rmarkdown file that contains the code to create index.html
 `Index.html` <- [github page](https://setenhage.github.io/MSB1015_Assignment3/), containing introduction, methods, results and discussion of the project. 
 
 ## Requirements 
