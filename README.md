@@ -14,10 +14,10 @@ The aim of this project is to show that parallel computing improves the calculat
 `CPU_time_logP.nf` <- contains the code to calculate the logP values for all compounds. This code also times the duration of this calculation and stores the results in a file. </br>
 `CPU_duration.tsv` <- tab-delimited text file that stores the number of CPUs with the corresponding calculation time. </br>
 `getSMILES` <- contains the query used to obtain the compounds. </br>
-`all_canonical_isomeric_smiles.tsv` <- Results from query (downloaded from query.wikiddata.org, using getSMILES) </br>
-`short.tsv` <- file with only 5 smiles to test code before running it on 158800 smiles.
+`all_canonical_isomeric_smiles.tsv` <- Results from query (downloaded from query.wikiddata.org, using getSMILES). </br>
+`short.tsv` <- file with only 5 smiles to test code before running it on 158800 smiles. </br>
 `Example_files` <- folder with example files provided by Egon Willighagen. </br>
-`Index.rmd` <- Rmarkdown file that contains the code to create index.html
+`Index.rmd` <- Rmarkdown file that contains the code to create index.html. </br>
 `Index.html` <- [github page](https://setenhage.github.io/MSB1015_Assignment3/), containing introduction, methods, results and discussion of the project. 
 
 ## Requirements 
