@@ -10,8 +10,8 @@ Welcome to the repository of MSB1015 Assignment 3! Here I keep track of my progr
 `Example_files` <- folder with example files provided by Egon Willighagen. 
 
 ## Requirements 
-•	[Rstudio](https://rstudio.com/)  
-•	[Nextflow](https://www.nextflow.io/) 
+•	[Rstudio](https://rstudio.com/) </br> 
+•	[Nextflow](https://www.nextflow.io/) </br>
 •	[Java](https://java.com/nl/download/)
 
 ## Authors
