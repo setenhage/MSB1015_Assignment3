@@ -9,6 +9,10 @@ Welcome to the repository of MSB1015 Assignment 3! Here I keep track of my progr
 `short.tsv` <- file with only 5 smiles to test code before running it on 158800 smiles.
 `Example_files` <- folder with example files provided by Egon Willighagen. 
 
+## Requirements 
+•	[Rstudio](https://rstudio.com/)  
+•	[Nextflow](https://www.nextflow.io/) 
+•	[Java](https://java.com/nl/download/)
 
 ## Authors
 Suzanne ten Hage
