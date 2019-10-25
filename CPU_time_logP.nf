@@ -47,7 +47,7 @@ def CPUduration = new File ("./CPU_duration.tsv")
                cdk = new CDKManager(".")
 	       logPDescr = new JPlogPDescriptor()
 	    
-               if(isoSmiles != nulll){ 
+               if(isoSmiles != null){ 
 	          try {
                      //Use CDKManager to parse SMILES. This will retrun a CDK 
 		     //molecule object. It is preferred to use isomeric SMILES, because
@@ -80,6 +80,7 @@ def CPUduration = new File ("./CPU_duration.tsv")
 		     println "Error in calculating logP for this canonical SMILES:" + canonSmiles
         	  }
    	       } 
+      }
    }
    //Record end time (when process is finished calculating LogP values).
    def timeStop = new Date()
