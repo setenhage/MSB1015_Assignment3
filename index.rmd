@@ -1,0 +1,44 @@
+---
+title: "Effect of parallel computing on calculation times"
+author: "Suus ten Hage"
+date: "25 oktober 2019"
+output: html_notebook
+---
+
+**Introduction** <br/>
+In order to speed up calculations, modern computers are able to perform processes in paralell, which is called parallel computing. In parallel computing the workload is divided over several central processing units (CPUs). The aim of this project is to visualize the time that can be gained by doing parallel computing in contrast to sequential computing. <br/>
+Not every task can be done in parallel; when one step of the process depends on the result of a previous step, parallel computing is not possible. Calculations that need to be performed on each entry of a large dataset are especially suitable for parallel computing, because the dataset can be split in smaller groups and then processed in parallel. In this project, I calculate the logP value for all compounds in the Wikidata database [ref1] based on their simplified molecular-input line-entry system (SMILES). <br/> 
+
+**Methods** <br/>
+The compounds are obtained from the wikidata using the getSMILES.rq file provided by Egon Willighagen. This gives a tab-delimited text file containg the wikidata link, canonical SMILES and isomeric SMILES for all compounds. The nextflow file CPU_time_logP.nf uses this text file as input and calculates the logP values, using between 1 and 8 CPUs. It returns the calculation time for each number of CPUs in a tab-delimited text file called CPU_duration.tsv. This file is used here to plot the results. <br/>  
+
+```{r include = TRUE, message = FALSE, warning = FALSE}
+#Install required package stringr. 
+#install.packages('stringr')
+library('stringr')
+
+#Load the CPU_duration text file. 
+CPU_duration <- read.table(file = 'CPU_duration.tsv', sep = '\t', header = FALSE)
+#Split the time and seconds label. 
+CPU_duration[,2:3] <- str_split_fixed(CPU_duration[,2], " ", 2)
+
+```
+
+**Results** <br/>
+```{r include = TRUE, message = FALSE, warning = FALSE}
+
+#Plot the calculation time vs. the number of CPUs. 
+plot(CPU_duration[,1], 
+     CPU_duration[,2], 
+     main = "Figure 1: Calculation time vs. the number of CPUs", 
+     xlab = "number of CPUs", 
+     ylab = "Calculation time (s)"
+     )
+``` 
+
+**Discussion** <br/>
+As can be seen in figure 1, the computatation time is not reduced when using more CPUs. This could be caused by the calcuation of logP values, which is not possible for many of the compounds. The process skips all SMILES that it cannot calculate the logP value for. Therefore, calculation the entire process sequentially could be so fast that it is hard to measure the improvement of calculation time in parallel computing. A second possibility is that the method of measuring the calculation time used here does not reflect the actual calculation time for the logP value calculation. Due to time constraints, it has not been possible to solve these constraints in the current project. It would, however, be interesting to improve this in future versions of the code. </br>
+
+**References** <br/>
+ref1: https://www.wikidata.org/wiki/Wikidata:Main_Page (12-10-2019) <br/>
+
