@@ -16,7 +16,8 @@ The aim of this project is to show that parallel computing improves the calculat
 `getSMILES` <- contains the query used to obtain the compounds. </br>
 `all_canonical_isomeric_smiles.tsv` <- Results from query (downloaded from query.wikiddata.org, using getSMILES) </br>
 `short.tsv` <- file with only 5 smiles to test code before running it on 158800 smiles.
-`Example_files` <- folder with example files provided by Egon Willighagen. 
+`Example_files` <- folder with example files provided by Egon Willighagen. </br>
+`Index.html` <- [github page](https://setenhage.github.io/MSB1015_Assignment3/), containing introduction, methods, results and discussion of the project. 
 
 ## Requirements 
 Following software was used on Windows 10: </br>
