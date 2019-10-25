@@ -26,6 +26,12 @@ Following software was used with the virual Linux environment [Debian](https://w
 •	[Groovy](https://groovy-lang.org/) </br> 
 •	[Java](https://java.com/nl/download/)
 
+## How to do this experiment yourself
+1. Dowload all files and remove the CPU_duration.tsv file. If you don't remove it, your own calculation times will get added to the ones that are already stored. Make sure all other files are saved in the same folder. <br/>
+2. Open the CPU_time_logP file in Linux environment and adapt this to match the number of CPUs your computer has (it is indicated in the file where to do this) <br/>
+3. Run the CPU_time_logP.nf file in nextflow. <br/>
+4. Run the index.rmd file in Rstudio. <br/>
+
 ## Authors
 Suzanne ten Hage </br>
 Egon Willighagen (getSMILES.rq)
