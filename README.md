@@ -10,9 +10,9 @@ Welcome to the repository of MSB1015 Assignment 3! Here I keep track of my progr
 `Example_files` <- folder with example files provided by Egon Willighagen. 
 
 ## Requirements 
-Following software was used on Windows 10: 
+Following software was used on Windows 10: </br>
 •	[Rstudio](https://rstudio.com/) </br> 
-Following software was used with the virual Linux environment [Debian](https://www.debian.org/index.en.html) on Windows 10.  
+Following software was used with the virual Linux environment [Debian](https://www.debian.org/index.en.html) on Windows 10: </br> 
 •	[Nextflow](https://www.nextflow.io/) </br>
 •	[Groovy](https://groovy-lang.org/) </br> 
 •	[Java](https://java.com/nl/download/)
